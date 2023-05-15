@@ -1,0 +1,253 @@
+@font-face {
+    font-family: "Moscow";
+    src: url(/fonts/moscowmetro.otf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgb(34, 43, 37);
+}
+
+.input {
+    top: ;
+    height: 100px;
+    width: 100%;
+    position: relative;
+    background: rgba(128, 128, 128, 0.071);
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 128, 0, 0.061);
+}
+
+.title {
+    height: 100%;
+    background: ;
+    text-align: center;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.title p {
+    width: 100%;
+    color: rgb(79, 112, 79);
+    font-family: Moscow;
+    font-size: 25px;
+}
+
+.getName,
+.search {
+    margin-left: 250px;
+    margin-top: 10px;
+    height: 50px;
+    width: 30px;
+}
+
+.search {
+    background: rgba(29, 46, 29, 0.242);
+    border: 3px solid rgb(12, 26, 11);
+    border-radius: 20px;
+    width: 40px;
+    margin-left: 0;
+    transition: .4s;
+}
+
+.search:hover {
+    background: white;
+    filter: brightness(60%)
+}
+
+svg {
+    fill: ;
+    font-weight: 100;
+    height: 50%;
+    width: 60%;
+}
+
+.getName {
+    background: rgba(29, 46, 29, 0.242);
+    border: 1px solid rgb(12, 26, 11);
+    opacity: 1;
+    width: 50%;
+    margin-right: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgb(19, 24, 19);
+}
+
+.getName,
+.getName::placeholder {
+    color: grey;
+    text-align: center;
+    font-weight: 700;
+    word-spacing: 3px;
+    letter-spacing: 2px;
+}
+
+.movieContainer {
+    width: 100%;
+    height: fit-content;
+    color: white;
+    background: rgb(34, 43, 37);
+}
+
+.movie {
+    display: flex;
+    padding: 10px;
+}
+
+.poster {
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 30px;
+}
+
+.details {
+    word-spacing: 5px;
+    line-height: 25px;
+}
+
+.mTitle,
+.mDate,
+.mOverview {
+    height: 50px;
+    min-width: 80%;
+    background: rgb(27, 42, 27);
+    font-size: larger;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(12, 26, 11);
+    border-radius: 15px;
+}
+
+.entity {
+    color: white;
+    max-width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 10px;
+    border-right: 2px solid white;
+    min-width: 75px;
+}
+
+.content {
+    min-width: 300px;
+    padding-left: 12px;
+    background-color: ;
+    width: fit-content;
+}
+
+.mDate {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mOverview {
+    height: fit-content;
+    min-height: 150px;
+    display: flex;
+    align-items: normal;
+    justify-content: none;
+    flex-direction: column;
+}
+
+.mOverview .entity {
+    border: 0;
+    color: ;
+    background: ;
+    height: 40px;
+    margin-top: 10px;
+    border-bottom: 2px solid black;
+    width: 95%;
+    text-align: center;
+    justify-content: center;
+}
+
+.mOverview .content {
+    text-align: center;
+    overflow: hidden;
+    height: fit-content;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    color: rgb(175, 207, 161);
+    height: ;
+    width: 90%;
+    border-radius: 0px;
+    background: rgb(19, 26, 21);
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+    overflow: scroll;
+    transition: .4s;
+}
+
+li img {
+    transition: .4s;
+    min-height: 300px;
+    min-width: 300px;
+    margin-left: 20px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+ol p {
+    color: white;
+    font-size: large;
+    width: 100%;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    height: 200px;
+    background: transparent;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circleContainer {
+    position: relative;
+    display: flex;
+    overflow-x: hidden;
+    height: 50px;
+    background: gray;
+    width: fit-content;
+    max-width: 600px;
+}
+
+.circleContainer li {
+    min-width: fit-content;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background: red;
+    margin-right: 0px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 7px;
+    right: 0px;
+}
+
+footer svg {
+    height: 40px;
+    top: 0;
+}
