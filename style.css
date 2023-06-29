@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Moscow";
-    src: url(/fonts/moscowmetro.otf);
+    src: url(moscowmetro.otf);
 }
 
 body {
@@ -288,6 +288,52 @@ h4 {
 .forward:hover {
     background: white;
     border-radius: 20px;
+}
+
+
+@media screen and (max-width: 992px) {
+    body {
+        max-width: 768px;
+    }
+    .poster {
+        height: 300px;
+        width: 200px;
+    }
+    li {
+        max-width: 1000vw;
+    }
+    .details {
+        word-spacing: 5px;
+        line-height: 15px;
+        max-width: 300px;
+        overflow: hidden;
+    }
+    .mTitle,
+    .mDate,
+    .mOverview {
+        height: 30px;
+        min-height: fit-content;
+        background: rgb(27, 42, 27);
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        border: 1px solid rgb(12, 26, 11);
+        border-radius: 15px;
+    }
+    .mOverview {
+        height: fit-content;
+        max-height: 200px;
+        width: fit-content;
+    }
+    .getName,
+    .search {
+        margin-right: 50px;
+    }
+    .title {
+        margin-left: 20px;
+    }
 }
 
 .forward:hover svg,
