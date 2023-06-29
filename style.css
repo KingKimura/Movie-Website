@@ -64,11 +64,10 @@ body {
 }
 
 svg {
-    fill: white ;
+    fill: ;
     font-weight: 100;
     height: 50%;
     width: 60%;
-    transition:0.8s;
 }
 
 .getName {
@@ -183,7 +182,7 @@ svg {
 li {
     display: flex;
     align-items: center;
-    color: rgb(175, 207, 161);
+    color: rgb(255, 255, 255);
     height: ;
     width: 90%;
     border-radius: 0px;
@@ -268,7 +267,14 @@ footer svg {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/* The Buttons for going Back and Forth  */
+h4 {
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+
 .back,
 .forward {
     border-radius: 10px;
