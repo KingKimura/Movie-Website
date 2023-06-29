@@ -105,24 +105,24 @@ let getMovie = (movieName) => {
             allResults = Number(allResults)
 
 
-            while (x < allResults) {
+            // while (x < allResults) {
 
 
 
 
 
 
-                let circle = document.createElement('li')
-                circle.className = 'zoza'
+            //    //  let circle = document.createElement('li')
+            //    //  circle.className = 'zoza'
 
-                circle.innerText = (x)
-                allCircles.append(circle)
-                x++
-
-
+            //    //  circle.innerText = (x)
+            //    // // allCircles.append(circle)
+            //  //   x++
 
 
-            }
+
+
+            // }
 
 
 
