@@ -186,7 +186,7 @@ li {
     height: ;
     width: 90%;
     border-radius: 0px;
-    background: rgb(19, 26, 21);
+    background:  rgb(34, 43, 37);
     margin: auto;
     margin-top: 30px;
     padding: 10px;
@@ -227,7 +227,7 @@ footer {
     display: flex;
     overflow-x: hidden;
     height: 50px;
-    background: gray;
+    background: transparent;
     width: fit-content;
     max-width: 600px;
 }
