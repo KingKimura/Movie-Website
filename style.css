@@ -196,8 +196,8 @@ li {
 
 li img {
     transition: .4s;
-    min-height: 300px;
-    min-width: 300px;
+    min-height: 200px;
+    min-width: 200px;
     margin-left: 20px;
 }
 
@@ -300,6 +300,7 @@ h4 {
         width: 200px;
     }
     li {
+        display:block;
         max-width: 1000vw;
     }
     .details {
@@ -340,3 +341,5 @@ h4 {
 .back:hover svg {
     fill: rgb(27, 42, 27);
 }
+
+
