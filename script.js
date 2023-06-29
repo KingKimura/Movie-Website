@@ -12,82 +12,20 @@ const overview = document.querySelector('.content.overview')
 const searchBar = document.querySelector('input')
 const allMovies = document.querySelector('.allMovies')
 const allCircles = document.querySelector('.circleContainer')
-let i = 0
-let right = 50
-
-let left = 50
-
-
-
-function forward() {
-
-
-
-    console.log(i);
-
-    let circleList = document.getElementsByClassName('zoza')
-
-
-    while (i < circleList.length) {;
-
-        circle = circleList[i]
-        circle.style = ` right: ${right}px`
-        i++
-    }
-    i = 0
-
-    console.log(i)
-
-
-
-    right += 50
-
-
-
-}
-
-function backward() {
-
-
-
-
-    console.log(i);
-
-    let circleList = document.getElementsByClassName('zoza')
-
-
-    while (i < circleList.length) {;
-
-        circle = circleList[i]
-        circle.style = ` left: ${left}px`
-        i++
-    }
-    i = 0
-
-
-    console.log(i)
-
-
-
-    left += 50
-
-
-
-}
-
-
-
-
-
+const counter = document.querySelector('.pages')
 
 
 let movieList = []
 let movieDetails = {}
+let allPages = 0
 
-let getMovie = (movieName) => {
+let getMovie = (movieName, page = 1) => {
     side = 50
     let image = document.querySelector('.poster')
-    let mainURL = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&query=${movieName}`
+    let mainURL = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&query=${movieName}&page=${page}`
+
+
+    console.log(mainURL);
     fetch(mainURL)
         .then((res) => {
             let all = res.json()
@@ -96,53 +34,20 @@ let getMovie = (movieName) => {
 
         })
         .then((info) => {
-            allCircles.innerHTML = ''
+
 
             let allResults = info['total_pages']
-            console.log(allResults);
-            console.log(typeof(allResults));
+
+
+
+            counter.innerHTML = `${page}/${allResults}`
+            allPages = allResults
+
+
             let x = 1
             allResults = Number(allResults)
 
-
-            // while (x < allResults) {
-
-
-
-
-
-
-            //    //  let circle = document.createElement('li')
-            //    //  circle.className = 'zoza'
-
-            //    //  circle.innerText = (x)
-            //    // // allCircles.append(circle)
-            //  //   x++
-
-
-
-
-            // }
-
-
-
-
-
             movieList = info['results']
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             movieList.forEach(element => {
@@ -177,21 +82,12 @@ let getMovie = (movieName) => {
         <div class="content overview">${mOverview}</div>
     </div>
 </div>`
-
                 allMovies.append(li)
 
             });
 
-
-
-
-
-
-
-
         })
 }
-
 
 
 function searchbar() {
@@ -202,7 +98,7 @@ function searchbar() {
 
 
         let input = document.querySelector('.getName').value
-        console.log(input)
+            // console.log(input)
         getMovie(input)
     }
 
@@ -234,3 +130,53 @@ searchBar.addEventListener('keyup',
     }
 
 )
+
+let fwd = 1
+let back = 1
+
+
+function forward() {
+    let input = document.querySelector('.getName').value
+    if (fwd < allPages) {
+        console.log("MovieList", movieList);
+        allMovies.innerHTML = ''
+        fwd++
+
+        getMovie(input, fwd)
+
+        back = fwd
+
+
+
+    } else {
+        allMovies.innerHTML = ''
+        getMovie(input)
+    }
+
+
+}
+
+
+
+function backward() {
+
+
+    let input = document.querySelector('.getName').value
+
+    if (back > 1) {
+        allMovies.innerHTML = ''
+        back += -1
+        fwd = back
+        getMovie(input, back);
+
+    } else {
+        allMovies.innerHTML = 'No more Pages'
+        getMovie(input)
+    }
+
+
+
+
+
+
+}
