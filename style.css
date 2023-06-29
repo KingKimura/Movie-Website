@@ -180,7 +180,7 @@ svg {
 }
 
 li {
-    display: flex;
+    display: none;
     align-items: center;
     color: rgb(175, 207, 161);
     height: ;
