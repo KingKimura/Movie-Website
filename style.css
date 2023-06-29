@@ -64,10 +64,11 @@ body {
 }
 
 svg {
-    fill: ;
+    fill: white ;
     font-weight: 100;
     height: 50%;
     width: 60%;
+    transition:0.8s;
 }
 
 .getName {
@@ -267,3 +268,23 @@ footer svg {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* The Buttons for going Back and Forth  */
+.back,
+.forward {
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    transition: 0.8s;
+    border: none;
+}
+
+.back:hover,
+.forward:hover {
+    background: white;
+    border-radius: 20px;
+}
+
+.forward:hover svg,
+.back:hover svg {
+    fill: rgb(27, 42, 27);
+}
