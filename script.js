@@ -23,6 +23,7 @@ let getMovie = (movieName, page = 1) => {
     side = 50
     let image = document.querySelector('.poster')
     let mainURL = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&query=${movieName}&page=${page}`
+    let finalImage = ''
 
 
     console.log(mainURL);
@@ -50,15 +51,32 @@ let getMovie = (movieName, page = 1) => {
             movieList = info['results']
 
 
+
             movieList.forEach(element => {
                 movieDetails = element
 
+                let imageSource = ''
 
-                let imageSource = 'https://image.tmdb.org/t/p/w500' + movieDetails["poster_path"]
+                if (!movieDetails["poster_path"]) {
+                    imageSource = 'error.png'
 
-                let altImage = 'https://image.tmdb.org/t/p/w200' + movieDetails["backdrop_path"]
+                } else {
+                    imageSource = 'https://image.tmdb.org/t/p/w500' + movieDetails["poster_path"]
+
+                }
+
+
+
+
+
+
+                let altImage = 'https://image.tmdb.org/t/p/w300' + movieDetails["backdrop_path"]
                 let mOverview = `${movieDetails["overview"]}`
                 let mTitle = movieDetails["title"]
+
+                if (!mTitle) {
+                    mTitle = movieDetails['name']
+                }
                 let mRelease = movieDetails["release_date"]
                 mRelease = new Date(mRelease)
 
@@ -66,8 +84,11 @@ let getMovie = (movieName, page = 1) => {
 
                 mRelease = mRelease.replace('03:00:00 GMT+0300 (East Africa Time)', '');
 
+
+
+
                 let li = document.createElement('li')
-                li.innerHTML = ` <img src="${imageSource}" alt="Poster Unavailable" class="poster">
+                li.innerHTML = ` <img src="${imageSource}"  class="poster">
 <div class="details">
     <div class="mTitle">
         <div class="entity">Title:</div>
